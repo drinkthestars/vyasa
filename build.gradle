@@ -1,0 +1,26 @@
+buildscript {
+    def compose_release_version = "dev11"
+    ext.compose_version = "0.1.0-$compose_release_version"
+    ext.compose_compiler_extension_version = "0.1.0-$compose_release_version"
+
+    repositories {
+        google()
+        jcenter()
+    }
+    // Already in buildSrc
+//    dependencies {
+//        classpath "com.android.tools.build:gradle:4.1.0-alpha09"
+//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

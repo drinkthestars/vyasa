@@ -1,0 +1,6 @@
+include ':ui'
+include ':domain'
+include ':data'
+include ':api'
+include ':app'
+rootProject.name = "Vyasa"

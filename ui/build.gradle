@@ -1,0 +1,38 @@
+plugins {
+    id 'android-lib-plugin'
+}
+
+def compose_release_version = "dev11"
+def compose_version = "0.1.0-$compose_release_version"
+def compose_compiler_extension_version = "0.1.0-$compose_release_version"
+
+android {
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerVersion "1.3.70-dev-withExperimentalGoogleExtensions-20200424"
+        kotlinCompilerExtensionVersion "$compose_compiler_extension_version"
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation("androidx.compose:compose-runtime:$compose_version")
+    implementation("androidx.ui:ui-core:$compose_version")
+    implementation("androidx.ui:ui-layout:$compose_version")
+    implementation("androidx.ui:ui-material:$compose_version")
+    implementation("androidx.ui:ui-material-icons-extended:$compose_version")
+    implementation("androidx.ui:ui-foundation:$compose_version")
+    implementation("androidx.ui:ui-animation:$compose_version")
+    implementation "androidx.ui:ui-tooling:$compose_version"
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+//    ktlint "com.pinterest:ktlint:0.36.0"
+}

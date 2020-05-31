@@ -1,0 +1,8 @@
+plugins {
+    id 'android-lib-plugin'
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':api')
+}
