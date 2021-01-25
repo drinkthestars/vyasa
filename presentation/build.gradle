@@ -1,0 +1,34 @@
+plugins {
+    id 'android-lib-plugin'
+}
+
+android {
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerVersion Versions.kotlin_version
+        kotlinCompilerExtensionVersion Versions.compose_version
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+
+    implementation "androidx.compose.runtime:runtime:$Versions.compose_version"
+    implementation "androidx.compose.ui:ui:$Versions.compose_version"
+    implementation "androidx.compose.foundation:foundation-layout:$Versions.compose_version"
+    implementation "androidx.compose.material:material:$Versions.compose_version"
+    implementation "androidx.compose.foundation:foundation:$Versions.compose_version"
+    implementation "androidx.compose.animation:animation:$Versions.compose_version"
+    implementation "androidx.navigation:navigation-compose:$Versions.compose_nav_version"
+    implementation "androidx.paging:paging-compose:$Versions.compose_paging_version"
+    implementation "androidx.paging:paging-runtime:$Versions.paging_version"
+
+    implementation "androidx.compose.ui:ui-tooling:$Versions.compose_version"
+    implementation "androidx.compose.ui:ui-test:$Versions.compose_version"
+}

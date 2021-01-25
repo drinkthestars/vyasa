@@ -3,8 +3,6 @@ plugins {
     `kotlin-dsl`
 }
 
-val kotlinVersion = "1.3.71"
-
 gradlePlugin {
     plugins {
         register("android-lib-plugin") {
@@ -27,7 +25,7 @@ repositories {
 dependencies {
     compileOnly(gradleApi())
 
-    implementation("com.android.tools.build:gradle:4.1.0-alpha09")
-    implementation(kotlin("gradle-plugin", kotlinVersion))
+    implementation("com.android.tools.build:gradle:7.0.0-alpha04")
+    implementation(kotlin("gradle-plugin", "1.4.21"))
     implementation(kotlin("android-extensions"))
 }
